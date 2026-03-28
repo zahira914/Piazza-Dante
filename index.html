@@ -3,177 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piazza Dante - Codex Digitalis</title>
+    <title>Piazza Dante - Il Manoscritto</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Spectral:italic,wght@0,400;0,700&display=swap" rel="stylesheet">
     <style>
-        /* TEMA MANOSCRITTO MEDIEVALE */
         :root {
-            --pergamena: #fdf5e6;
-            --pelle: #d2b48c;
-            --inchiostro: #2c1b0a;
-            --oro: #b8860b;
-            --rosso-cardinale: #800000;
+            --pergamena: #f2e3c9;
+            --pelle: #3e2723;
+            --inchiostro: #1a0f0a;
+            --oro: #a67c00;
+            --rosso-antico: #7e0000;
         }
 
         body {
-            background-color: #3e2723; /* Sfondo scuro per far risaltare la pergamena */
+            background-color: var(--pelle);
+            background-image: url('https://www.transparenttextures.com/patterns/leather.png');
             color: var(--inchiostro);
-            font-family: 'Crimson Text', 'Georgia', serif;
+            font-family: 'Spectral', serif;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
         }
 
-        .scroll {
+        .manoscritto {
             background-color: var(--pergamena);
-            max-width: 800px;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            max-width: 850px;
             width: 100%;
-            padding: 60px;
-            border: 15px solid #5d4037;
-            border-image: radial-gradient(#8d6e63, #5d4037) 1;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            padding: 50px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+            border: 2px solid #8d6e63;
             position: relative;
         }
 
-        /* Capolettera e decorazioni */
-        header h1 {
-            font-size: 3.5rem;
+        /* Cornice decorativa */
+        .manoscritto::before {
+            content: "";
+            position: absolute;
+            top: 15px; left: 15px; right: 15px; bottom: 15px;
+            border: 1px solid var(--oro);
+            pointer-events: none;
+        }
+
+        header {
             text-align: center;
-            color: var(--rosso-cardinale);
+            border-bottom: 3px double var(--rosso-antico);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 3.5rem;
+            color: var(--rosso-antico);
             margin: 0;
-            text-transform: uppercase;
-            border-bottom: 3px double var(--oro);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .dante-img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* Stile aggiornato per la nuova immagine orizzontale */
+        .dante-img {
+            max-width: 100%;
+            width: 550px; /* Larghezza ottimizzata per l'immagine fornita */
+            height: auto;
+            border: 8px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-image: linear-gradient(to bottom, var(--oro), #5d4037) 1;
         }
 
         nav {
             text-align: center;
-            margin: 30px 0;
-            border-top: 1px solid var(--oro);
-            border-bottom: 1px solid var(--oro);
-            padding: 10px 0;
+            margin-bottom: 40px;
+            font-family: 'MedievalSharp', cursive;
         }
 
         nav a {
             color: var(--inchiostro);
             text-decoration: none;
-            margin: 0 15px;
-            font-variant: small-caps;
-            font-weight: bold;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            border-bottom: 1px transparent;
         }
 
-        /* Gestione Immagine con Fallback */
-        .image-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .dante-img {
-            max-width: 100%;
-            height: auto;
-            border: 8px solid var(--oro);
-            outline: 2px solid var(--inchiostro);
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-            background-color: var(--pelle); /* Colore di sfondo se l'immagine fallisce */
+        nav a:hover {
+            color: var(--rosso-antico);
+            border-bottom: 1px solid var(--rosso-antico);
         }
 
         h2 {
-            color: var(--rosso-cardinale);
-            border-left: 5px solid var(--oro);
-            padding-left: 15px;
-            margin-top: 40px;
+            font-family: 'MedievalSharp', cursive;
+            color: var(--rosso-antico);
+            border-bottom: 1px solid var(--oro);
+            padding-bottom: 5px;
         }
 
-        .content {
-            line-height: 1.8;
-            font-size: 1.1rem;
+        .testo-antico {
+            font-size: 1.2rem;
+            line-height: 1.7;
             text-align: justify;
         }
 
-        .quote {
-            font-style: italic;
-            background: rgba(184, 134, 11, 0.1);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: center;
-            border: 1px solid var(--oro);
+        .capolettera {
+            float: left;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 4rem;
+            line-height: 1;
+            padding-right: 10px;
+            color: var(--rosso-antico);
         }
 
-        .materials {
-            font-size: 0.9rem;
-            background: #f0e68c;
-            padding: 10px;
-            border-left: 5px solid var(--inchiostro);
-            margin-top: 10px;
+        .box-materiali {
+            background: rgba(166, 124, 0, 0.1);
+            border: 1px dashed var(--inchiostro);
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
         }
 
         footer {
-            margin-top: 60px;
+            margin-top: 50px;
             text-align: center;
-            font-size: 0.8rem;
-            border-top: 2px solid var(--oro);
+            font-style: italic;
+            border-top: 1px solid var(--oro);
             padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<div class="scroll">
+<div class="manoscritto">
     <header>
         <h1>Piazza Dante</h1>
-        <p style="text-align: center; font-variant: small-caps;">Codex Digitalis - Anno MMXXIV</p>
+        <p><i>Chronicon del Progetto Artistico Scolastico</i></p>
     </header>
 
     <nav>
-        <a href="#progetto">Il Progetto</a>
-        <a href="#dante">Il Poeta</a>
-        <a href="#beatrice">Beatrice</a>
-        <a href="#riflessione">L'Ignavia</a>
+        <a href="#storia">Il Luogo</a> | 
+        <a href="#ritratto">Il Poeta</a> | 
+        <a href="#opere">Le Opere</a> | 
+        <a href="#ignavia">Riflessione</a>
     </nav>
 
-    <div class="image-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Dante_Alighieri_by_Sandro_Botticelli-clean.jpg" 
+    <div class="dante-img-container">
+        <img src="https://www.marcelloveneziani.com/wp-content/uploads/2021/03/32-620x350.jpg" 
              alt="Ritratto di Dante Alighieri" 
              class="dante-img">
-        <p style="font-size: 0.8rem; color: #666;"><i>Ritratto del Sommo Poeta</i></p>
     </div>
 
-    <section id="progetto">
+    <section id="storia">
         <h2>L'Angolo della Meraviglia</h2>
-        <div class="content">
-            <p>In un angolo della nostra scuola sorge <b>Piazza Dante</b>, uno spazio di riflessione nato dal genio collettivo degli studenti sotto la guida del Prof. Miglionico. Qui, materiali umili e destinati all'oblio riprendono vita per narrare l'eterna Commedia.</p>
+        <p class="testo-antico">
+            <span class="capolettera">I</span>n un angolo della nostra scuola è nato uno spazio speciale dove gli studenti possono ammirare i ritratti del Sommo Poeta e della luminosa Beatrice. Piazza Dante è nata da un progetto guidato dal prof. Miglionico, trasformando materiali di scarto in pura bellezza.
+        </p>
+    </section>
+
+    <section id="ritratto">
+        <h2>Il Ritratto del Poeta</h2>
+        <p class="testo-antico">
+            Dante Alighieri (1265-1321) è qui rappresentato con uno sguardo che invita alla riflessione. L'opera non è fatta di colori comuni, ma di vita riciclata.
+        </p>
+        <div class="box-materiali">
+            <b>Materiali del Mosaico:</b> Tappi, bottoni, plastica, cannucce, foglie finte, carta e stoffa.
         </div>
     </section>
 
-    <section id="dante">
-        <h2>Dante Alighieri</h2>
-        <div class="quote">
-            "Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura..."
-        </div>
-        <div class="content">
-            <p>Il ritratto di Dante, realizzato con un mosaico di tappi, bottoni e stoffa, simboleggia la complessità dell'animo umano e il rigore morale del poeta che ha dato i natali alla nostra lingua.</p>
-            <div class="materials">
-                <b>Tecnica:</b> Riciclo creativo di plastica, foglie finte e frammenti tessili.
-            </div>
-        </div>
+    <section id="opere">
+        <h2>Il Trittico e Beatrice</h2>
+        <p class="testo-antico">
+            Il trittico celebra il settecentenario della morte di Dante. Beatrice, simbolo di purezza, appare circondata da luce policroma realizzata con capsule del caffè e stickers.
+        </p>
     </section>
 
-    <section id="beatrice">
-        <h2>Beatrice Portinari</h2>
-        <div class="content">
-            <p>Simbolo di grazia divina e pura spiritualità. La sua figura nel nostro progetto è circondata da luce policroma, resa viva grazie all'uso sapiente di capsule del caffè e carta colorata.</p>
-        </div>
-    </section>
-
-    <section id="riflessione">
-        <h2>Sull'Ignavia Moderna</h2>
-        <div class="content">
-            <p>Dante condannava chi non sapeva scegliere. Oggi l'ignavia è l'indifferenza del mondo digitale. Questo spazio ci invita a non restare spettatori, ma a diventare attori della nostra cultura.</p>
-        </div>
+    <section id="ignavia">
+        <h2>Riflessione sull'Ignavia</h2>
+        <p class="testo-antico">
+            Dante condanna chi non sceglie. Oggi l'ignavia è l'indifferenza e la passività digitale. Questo spazio ci ricorda di prendere sempre posizione.
+        </p>
     </section>
 
     <footer>
-        <p>Progetto ispirato alla presentazione "Verde Scuro Marrone Beige"</p>
+        <p>"La gloria di colui che tutto move per l'universo penetra e risplende..."</p>
     </footer>
 </div>
 

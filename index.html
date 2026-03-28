@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piazza Dante - Web App</title>
+    <style>
+        :root {
+            --verde-scuro: #2d3e2e;
+            --marrone: #5d4037;
+            --beige: #f5f5dc;
+            --accento: #8b0000; /* Rosso Dante */
+            --testo: #333;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--beige);
+            color: var(--testo);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--verde-scuro);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--marrone);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--marrone);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        h2 {
+            color: var(--marrone);
+            border-left: 5px solid var(--verde-scuro);
+            padding-left: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .materials-list {
+            background: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--verde-scuro);
+            color: white;
+            margin-top: 40px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--accento);
+            text-align: center;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PIAZZA DANTE</h1>
+    <p>Un viaggio tra arte, poesia e riciclo creativo</p>
+</header>
+
+<nav>
+    <a href="#progetto">Il Progetto</a>
+    <a href="#dante">Dante</a>
+    <a href="#paradiso">Paradiso</a>
+    <a href="#beatrice">Beatrice</a>
+    <a href="#ignavia">Riflessione</a>
+</nav>
+
+<section id="progetto">
+    <h2>Lo Spazio Speciale</h2>
+    <p>Piazza Dante è un angolo della nostra scuola nato da un progetto artistico-didattico guidato dal prof. Miglionico[cite: 145, 146]. È un luogo di meraviglia dove fermarsi a riflettere sull'importanza della cultura[cite: 149].</p>
+    <div class="card">
+        <h3>Il Trittico Collettivo</h3>
+        <p>L'opera celebra il settecentenario della morte di Dante, dando nuova vita a oggetti destinati allo smaltimento[cite: 151, 152]. La collaborazione tra elementi diversi diventa metafora del valore della cooperazione umana[cite: 154].</p>
+    </div>
+</section>
+
+<section id="dante">
+    <h2>Dante Alighieri</h2>
+    <span class="quote">"Nel mezzo del cammin di nostra vita..." [cite: 141]</span>
+    <p>Considerato il padre della lingua italiana, Dante (1265-1321) compose le sue opere più importanti durante l'esilio causato dai conflitti tra Guelfi e Ghibellini[cite: 156, 157].</p>
+    <div class="materials-list">
+        <strong>Materiali del ritratto:</strong> Tappi, bottoni, plastica, cannucce, foglie finte, carta e stoffa[cite: 160].
+    </div>
+</section>
+
+<section id="paradiso">
+    <h2>Il Paradiso</h2>
+    <span class="quote">"La gloria di colui che tutto move..." [cite: 246]</span>
+    <p>Rappresentato come una spirale che attira a sé le anime, un luogo astratto dove bianco e nero generano tutti i colori[cite: 247].</p>
+    <div class="materials-list">
+        <strong>Materiali:</strong> Cavi, giocattoli di plastica, capsule del caffè e lacci[cite: 248].
+    </div>
+</section>
+
+<section id="beatrice">
+    <h2>Beatrice Portinari</h2>
+    <p>Simbolo di purezza e spiritualità (1266-1290)[cite: 250, 251]. Nel ritratto appare circondata da fiori, farfalle e luce policroma[cite: 252].</p>
+    <div class="materials-list">
+        <strong>Materiali:</strong> Capsule del caffè, bottoni, carta e stickers[cite: 253].
+    </div>
+</section>
+
+<section id="ignavia">
+    <h2>Riflessione sull'Ignavia</h2>
+    <p>Dante condanna chi non prende posizione[cite: 270]. Oggi l'ignavia si manifesta come indifferenza, passività digitale e mancanza di responsabilità[cite: 271].</p>
+    <p><strong>Domanda:</strong> In quali situazioni della vita quotidiana rischiamo di essere ignavi? [cite: 274]</p>
+</section>
+
+<footer>
+    <p>Progetto Didattico - Divina Commedia</p>
+</footer>
+
+</body>
+</html>

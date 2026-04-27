@@ -36,7 +36,6 @@
             position: relative;
         }
 
-        /* Cornice decorativa */
         .manoscritto::before {
             content: "";
             position: absolute;
@@ -60,20 +59,24 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
-        .dante-img-container {
+        .img-container {
             text-align: center;
             margin: 30px 0;
         }
 
-        /* Stile aggiornato per la nuova immagine orizzontale */
-        .dante-img {
+        .cornice-artistica {
             max-width: 100%;
-            width: 550px; /* Larghezza ottimizzata per l'immagine fornita */
             height: auto;
             border: 8px solid #fff;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border-image: linear-gradient(to bottom, var(--oro), #5d4037) 1;
+            margin-bottom: 15px;
         }
+
+        /* Dimensioni specifiche per rendere il layout equilibrato */
+        .img-small { width: 300px; }
+        .img-medium { width: 500px; }
+        .img-large { width: 100%; }
 
         nav {
             text-align: center;
@@ -86,7 +89,6 @@
             text-decoration: none;
             margin: 0 10px;
             font-size: 1.1rem;
-            border-bottom: 1px transparent;
         }
 
         nav a:hover {
@@ -99,6 +101,7 @@
             color: var(--rosso-antico);
             border-bottom: 1px solid var(--oro);
             padding-bottom: 5px;
+            margin-top: 40px;
         }
 
         .testo-antico {
@@ -148,14 +151,15 @@
         <a href="#ignavia">Riflessione</a>
     </nav>
 
-    <div class="dante-img-container">
-        <img src="https://www.marcelloveneziani.com/wp-content/uploads/2021/03/32-620x350.jpg" 
-             alt="Ritratto di Dante Alighieri" 
-             class="dante-img">
+    <div class="img-container">
+        <img src="IMG_2111.jpg" alt="Insegna Piazza Dante" class="cornice-artistica img-small">
     </div>
 
     <section id="storia">
         <h2>L'Angolo della Meraviglia</h2>
+        <div class="img-container">
+            <img src="IMG_2104.jpg" alt="Vista d'insieme della sala" class="cornice-artistica img-large">
+        </div>
         <p class="testo-antico">
             <span class="capolettera">I</span>n un angolo della nostra scuola è nato uno spazio speciale dove gli studenti possono ammirare i ritratti del Sommo Poeta e della luminosa Beatrice. Piazza Dante è nata da un progetto guidato dal prof. Miglionico, trasformando materiali di scarto in pura bellezza.
         </p>
@@ -163,25 +167,34 @@
 
     <section id="ritratto">
         <h2>Il Ritratto del Poeta</h2>
+        <div class="img-container">
+            <img src="IMG_2105.jpg" alt="Mosaico di Dante" class="cornice-artistica img-medium">
+        </div>
         <p class="testo-antico">
             Dante Alighieri (1265-1321) è qui rappresentato con uno sguardo che invita alla riflessione. L'opera non è fatta di colori comuni, ma di vita riciclata.
         </p>
         <div class="box-materiali">
-            <b>Materiali del Mosaico:</b> Tappi, bottoni, plastica, cannucce, foglie finte, carta e stoffa.
+            <b>Materiali del Mosaico:</b> Capsule del caffè, tappi, bottoni, plastica, cannucce, foglie finte, carta e stoffa.
         </div>
     </section>
 
     <section id="opere">
-        <h2>Il Trittico e Beatrice</h2>
+        <h2>Beatrice e la Luce</h2>
+        <div class="img-container">
+            <img src="IMG_2107.jpg" alt="Mosaico di Beatrice" class="cornice-artistica img-medium">
+        </div>
         <p class="testo-antico">
-            Il trittico celebra il settecentenario della morte di Dante. Beatrice, simbolo di purezza, appare circondata da luce policroma realizzata con capsule del caffè e stickers.
+            Beatrice, simbolo di purezza e guida spirituale, appare circondata da una luce policroma. La tecnica del mosaico con materiali plastici e metallici dona al volto una luminosità unica, quasi divina.
         </p>
     </section>
 
     <section id="ignavia">
         <h2>Riflessione sull'Ignavia</h2>
+        <div class="img-container">
+            <img src="IMG_2106.jpg" alt="Opera astratta sulla riflessione" class="cornice-artistica img-medium">
+        </div>
         <p class="testo-antico">
-            Dante condanna chi non sceglie. Oggi l'ignavia è l'indifferenza e la passività digitale. Questo spazio ci ricorda di prendere sempre posizione.
+            Questa spirale di materiali diversi richiama il movimento delle anime e la confusione di chi non sceglie. Dante condanna chi non prende posizione: oggi l'ignavia è l'indifferenza e la passività digitale.
         </p>
     </section>
 
